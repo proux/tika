@@ -339,6 +339,7 @@ public class TikaServerCli {
             providers.add(new XMPMessageBodyWriter());
             providers.add(new TextMessageBodyWriter());
             providers.add(new TikaServerParseExceptionMapper(returnStackTrace));
+            providers.add(new AuthenticationFilter());
             if (line.hasOption("status")) {
                 providers.add(new JSONObjWriter());
             }
